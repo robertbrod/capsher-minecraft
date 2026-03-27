@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+body {
+    --mat-sys-body-medium-font: 'Fira Code', monospace;
+    --mat-sys-body-large-font: 'Fira Code', monospace;
+    --mat-sys-title-small-font: 'Fira Code', monospace;
+    --mat-sys-label-large-font: 'Fira Code', monospace;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
