@@ -1,0 +1,26 @@
+<div class="carousel-viewport">
+  <div class="carousel-stage">
+    <img [src]="currentImage()" class="carousel-slide" alt="Carousel slide" loading="lazy" />
+  </div>
+
+  <div class="carousel-overlay">
+    <button mat-icon-button (click)="prev()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="next()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+
+  <div class="pagination-dots">
+    @for (img of images(); track $index) {
+      <button
+        class="dot"
+        [class.active]="$index === currentIndex()"
+        (click)="goTo($index)"
+        [attr.aria-label]="'Go to slide ' + ($index + 1)"
+      ></button>
+    }
+  </div>
+</div>
