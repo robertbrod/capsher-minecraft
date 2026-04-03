@@ -9,5 +9,15 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './gallery.scss',
 })
 export class Gallery {
-  projectImages = ['ethan_terrain.png', 'rob_crops.png', 'tripper_tent.png', 'josh_house.png'];
+  projectImages = [
+    'andy_base.png',
+    'ethan_terrain.png',
+    'josh_house.png',
+    'nicholas_home1.png',
+    'nicholas_home2.png',
+    'nicholas_steam.png',
+    'rob_base.png',
+    'rob_farm.png',
+    'tripper_tent.png',
+  ];
 }
