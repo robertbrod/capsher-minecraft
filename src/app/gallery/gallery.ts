@@ -19,5 +19,9 @@ export class Gallery {
     'rob_base.png',
     'rob_farm.png',
     'tripper_tent.png',
+    'andy_1.png',
+    'andy_2.png',
+    'jd_1.png',
+    'rob_1.png',
   ];
 }
