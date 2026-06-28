@@ -1,6 +1,19 @@
 <div class="carousel-viewport">
+  <p class="caption">
+    @if (currentSlide().caption) {
+      "{{ currentSlide().caption }}" - submitted by {{ currentSlide().submitter }}
+    } @else {
+      Submitted by {{ currentSlide().submitter }}
+    }
+  </p>
   <div class="carousel-stage">
-    <img [src]="currentImage()" class="carousel-slide" alt="Carousel slide" loading="lazy" />
+    <img
+      [src]="currentSlide().src"
+      [alt]="currentSlide().caption"
+      class="carousel-slide"
+      alt="Carousel slide"
+      loading="lazy"
+    />
   </div>
 
   <div class="carousel-overlay">
@@ -14,7 +27,7 @@
   </div>
 
   <div class="pagination-dots">
-    @for (img of images(); track $index) {
+    @for (img of slides(); track $index) {
       <button
         class="dot"
         [class.active]="$index === currentIndex()"

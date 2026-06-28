@@ -1,25 +1,38 @@
 <mat-sidenav-container class="sidenav page-content">
   <mat-sidenav mode="side" opened>
     <mat-nav-list>
-      <!-- Home Navigation -->
+      <!-- Home -->
       <a mat-list-item [routerLink]="['/home']">
         <mat-icon matListItemIcon>chat</mat-icon>
         <span matListItemTitle>Discord</span>
       </a>
 
-      <!-- Dashboard Navigation -->
+      <!-- Setup -->
       <a mat-list-item [routerLink]="['/setup']">
         <mat-icon matListItemIcon>build_circle</mat-icon>
         <span matListItemTitle>Setup</span>
       </a>
 
-      <!-- Gallery Navigation -->
-      <a mat-list-item [routerLink]="['/gallery']">
+      <!-- Gallery toggle header -->
+      <a mat-list-item (click)="toggleGallery()" class="nav-parent">
         <mat-icon matListItemIcon>photo_library</mat-icon>
+
         <span matListItemTitle>Gallery</span>
       </a>
+
+      <!-- Nested items -->
+      <div class="nav-sublist" *ngIf="galleryOpen">
+        <a mat-list-item class="sub-item" [routerLink]="['pre-lv-gallery']"> Pre-LV </a>
+
+        <a mat-list-item class="sub-item" [routerLink]="['/lv-gallery']"> LV </a>
+
+        <a mat-list-item class="sub-item" [routerLink]="['/mv-gallery']"> MV </a>
+
+        <a mat-list-item class="sub-item" [routerLink]="['/hv-gallery']"> HV </a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <router-outlet />
   </mat-sidenav-content>
