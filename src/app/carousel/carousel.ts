@@ -10,12 +10,12 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './carousel.scss',
 })
 export class CarouselComponent {
-  images = input.required<string[]>();
+  slides = input.required<Slide[]>();
   autoPlay = input(true);
   interval = input(5000);
 
   protected currentIndex = signal(0);
-  protected currentImage = computed(() => this.images()[this.currentIndex()]);
+  protected currentSlide = computed(() => this.slides()[this.currentIndex()]);
 
   constructor() {
     effect((onCleanup) => {
@@ -27,14 +27,20 @@ export class CarouselComponent {
   }
 
   next() {
-    this.currentIndex.update((idx) => (idx + 1) % this.images().length);
+    this.currentIndex.update((idx) => (idx + 1) % this.slides().length);
   }
 
   prev() {
-    this.currentIndex.update((idx) => (idx - 1 + this.images().length) % this.images().length);
+    this.currentIndex.update((idx) => (idx - 1 + this.slides().length) % this.slides().length);
   }
 
   goTo(index: number) {
     this.currentIndex.set(index);
   }
 }
+
+  interface Slide {
+    src: string;
+    caption: string;
+    submitter: string;
+  }

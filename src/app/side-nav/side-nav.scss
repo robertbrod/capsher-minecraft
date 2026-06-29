@@ -10,4 +10,16 @@
   .sidenav {
     --mat-sidenav-container-width: 40px;
   }
+.nav-parent {
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.expand-icon {
+  margin-left: auto;
+}
 }

@@ -10,8 +10,8 @@
 .carousel-viewport {
   position: relative;
   aspect-ratio: 16 / 9;
-  max-height: calc(100vh - var(--mat-toolbar-standard-height) - 4rem);
-  max-width: calc((100vh - var(--mat-toolbar-standard-height) - 4rem) * 16 / 9);
+  max-height: calc(100vh - var(--mat-toolbar-standard-height) - 8rem);
+  max-width: calc((100vh - var(--mat-toolbar-standard-height) - 8rem) * 16 / 9);
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
@@ -48,6 +48,10 @@
         background: rgba(0, 0, 0, 0.4);
       }
     }
+  }
+
+  .caption {
+    font-size: large;
   }
 
   .pagination-dots {
